@@ -1,0 +1,29 @@
+{
+  "tests": [
+    {
+      "name": "Get all orders",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200,
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Create new order",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "customer_name": "Тест",
+        "customer_phone": "+7 999 999 99 99",
+        "delivery_address": "Тестовый адрес",
+        "total_price": 1000,
+        "items": []
+      },
+      "expectedStatus": 201,
+      "expectedBody": {
+        "customer_name": "string",
+        "total_price": "number"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
